@@ -62,9 +62,11 @@ box-shadow: 0px 0px 0px 0px #aad4d4;
 <script>
 var paragraph1 = document.querySelector("#paragraph1");
 var paragraph2 = document.querySelector("#paragraph2");
+centerDiv.style.height = "0px";
 function next(num) {
+ centerDiv.style.height = "0px"; 
  const paragraphs = [paragraph1, paragraph2];
- paragraphs[num].style.display="revert";
+ paragraphs[num].style.display="block";
  paragraphs[num].style.position="static";
 }
 </script>
