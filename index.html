@@ -56,8 +56,8 @@ box-shadow: 0px 0px 0px 0px #aad4d4;
 <div id="center"> 
 <button id="start-btn" onclick="this.remove(); next(0);"> start </button> 
 </div>
-<p id="paragraph1" class="fadeInUp-animation"> 29348rijbn2rmfogifgsldkgsd </p>
-<p id="paragraph2" class="fadeInUp-animation"> 2111111111111111111111111d </p>
+<p id="paragraph1"> 29348rijbn2rmfogifgsldkgsd </p>
+<p id="paragraph2"> 2111111111111111111111111d </p>
 </body>
 <script>
 var paragraph1 = document.querySelector("#paragraph1");
@@ -68,5 +68,6 @@ function next(num) {
  const paragraphs = [paragraph1, paragraph2];
  paragraphs[num].style.display="block";
  paragraphs[num].style.position="static";
+ paragraphs[num].className="fadeInUp-animation"
 }
 </script>
