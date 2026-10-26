@@ -30,31 +30,44 @@ box-shadow: 0px 0px 0px 0px #aad4d4;
  	body {
  		background-color: #ffccff
  }
+ @keyframes fadeInUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+.fadeInUp-animation {
+  animation: 1.5s fadeInUp;
+}
+#paragraph1 {
+ opacity: 0%;
+ position: absolute;
+}
+#paragraph2 {
+ opacity: 0%;
+ position: absolute;
+}
 </style>
 <body>
 <div id="center"> 
-<button id="start-btn" onclick="document.getElementById('center').innerHTML=para1"> start </button> 
+<button id="start-btn" onclick="next(0); this.remove;"> start </button> 
 </div>
+<p id="paragraph1" class="fadeInUp-animation"> 29348rijbn2rmfogifgsldkgsd </p>
+<p id="paragraph2" class="fadeInUp-animation"> 2111111111111111111111111d </p>
 </body>
+
 <script>
-var para1 = '' +
-'<style>'+
-'@keyframes fadeInUp {'+
-  '0% {'+
-    'transform: translateY(100%);'+
-    'opacity: 0;'+
-  '}'+
-  '100% {'+
-    'transform: translateY(0%);'+
-    'opacity: 1;'+
-  '}'+
-'}'+
-'.fadeInUp-animation {'+
-  'animation: 1.5s fadeInUp;'+
-'}'+
-'p {'+
-' color: white;'+
-'}'+
-'</style>'+
-'<p class="fadeInUp-animation"> asfkgdnkdaf </p>';
+var paragraph1 = document.querySelector("#paragraph1");
+var paragraph2 = document.querySelector("#paragraph2");
+function next(num) {
+ const paragraphs = [paragraph1, paragraph2];
+ paragraphs[num].style.opacity="1";
+ paragraphs[num].style.position="static";
+}
+
 </script>
+
