@@ -1,8 +1,8 @@
 <style>
- #start-btn {
+ #start-btn {
 transform: scale(3);
 
- 		font-family: monospace;
+ 		font-family: monospace;
 border-radius: 40px;
 		border:none;
 padding: 15px;
@@ -12,25 +12,107 @@ transition: ease-in-out, 0.8s;
 position: absolute;
 top: 50%;
 left: 50%;
- 	}
+ 	}
 #start-btn:hover {
 cursor: pointer;
 transform: scale(3.05);
 box-shadow: 0px 0px 40px 0px #ccffe6;
- }
+ }
 #start-btn:active {
 transition: ease-in-out, 0.25s;
 transform: scale(2.5);
 box-shadow: 0px 0px 0px 0px #aad4d4;
 	}
- #center {
-  		position: relative; 
-  		height: 100vh;
- }
- 	body {
- 		background-color: #ffccff
- }
- @keyframes fadeInUp {
+ #center {
+  		position: relative; 
+  		height: 100vh;
+ }
+ 	body {
+ 		background-color: #ffccff
+ }
+ @keyframes fadeInUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+.fadeInUp-animation {
+  animation: 1.5s fadeInUp;
+}
+#paragraph1 {
+ display: none;
+ position: absolute;
+}
+#paragraph2 {
+ display: none;
+ position: absolute;
+}
+#paragraph3 {
+ display: none;
+ position: absolute;
+
+}
+.next {
+ border-radius: 40px;
+ border:none;
+ padding: 10px;
+ padding-left: 25px;
+ padding-right: 25px;
+ transition: ease-in-out, 0.8s;
+}
+.next:hover {
+ transform: scale(1.1);
+ cursor: pointer;
+ box-shadow: 0px 0px 40px 20px #ccffe6;
+ transform: translateY(-5px);
+}
+.next:active {
+ transition: ease-in-out, 0.25s;
+ transform: scale(0.9);
+ box-shadow: 0px 0px 40px 0px #ccffe6;
+}
+</style>
+<body>
+<div id="center"> 
+<button id="start-btn" onclick="this.remove(); next(0);"> start </button> 
+</div>
+<div id="paragraph1"> 
+<button id="next-1" onclick="this.remove(); next(1); document.getElementById('paragraph1').remove();" class="next"> next</button> 
+<p> 29348rijbn2rmfogifgsldkgsd </p> 
+</div>
+<div id="paragraph2">
+<button id="next-2" onclick="this.remove(); next(2); document.getElementById('paragraph2').remove();" class="next"> next</button> 
+</br>
+</br>
+<img src="ddd" style="transform: scale(2); float: top; margin:10px; padding: 5px"> 
+ <p style = "text-indent: 40px;"> 2111111111111111111111111d </p> 
+</div>
+<div id="paragraph3">
+<button id="next-3" onclick="this.remove(); next(3); document.getElementById('paragraph3').remove();" class="next"> next</button> 
+</br>
+</br>
+<img src="ddd" style="transform: scale(2); float: top; margin:10px; padding: 5px"> 
+ <p style = "text-indent: 40px;"> why why why why why </p> 
+</div>
+</body>
+<script>
+var paragraph1 = document.querySelector("#paragraph1");
+var paragraph2 = document.querySelector("#paragraph2");
+var paragraph3 = document.querySelector("#paragraph3");
+var centerDiv = document.querySelector("#center");
+function next(num) {
+ centerDiv.style.height = "0px"; 
+ const paragraphs = [paragraph1, paragraph2, paragraph3];
+ paragraphs[num].style.display="block";
+ paragraphs[num].style.position="static";
+ paragraphs[num].className="fadeInUp-animation";
+}
+</script>
+
   0% {
     transform: translateY(100%);
     opacity: 0;
